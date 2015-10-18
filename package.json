@@ -1,0 +1,19 @@
+{
+  "name": "front-sdk",
+  "version": "0.0.0",
+  "description": "Managing your front sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruslan Nevecherya <r.nevech@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nevech/fornt-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nevech/fornt-sdk/issues"
+  },
+  "homepage": "https://github.com/nevech/fornt-sdk#readme"
+}
