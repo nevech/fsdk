@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+test_src
+dist_src
