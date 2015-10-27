@@ -1,23 +1,30 @@
 var vfs = require('vinyl-fs');
 var map = require('map-stream');
+var through = require('through2');
+var extend = require('util')._extend;
 
-var mode = 'admin';
+var startRE = /\n?.*fsdk:start(\(.*\)).*\n/i;
+var endRE = /\n.*fsdk:end.*(\n)?/i;
 
-function parseFile(file, callback) {
-  if (!file.isBuffer()) {
-    return callback(null, file);
-  }
+function parseFile (options) {
+  var options = extend({}, options);
 
-  var contents = parseContents(file.contents.toString(), mode);
+  return through.obj(function (file, enc, callback) {
+    if (!file.isBuffer()) {
+      return callback(null, file);
+    }
 
-  file.contents = new Buffer(contents, 'utf-8');
+    var content = parseContents(file.contents.toString(enc), options.mode);
 
-  callback(null, file);
+    file.content = new Buffer(content, enc);
+
+    callback(null, file);
+  });
 }
 
-function parseContents(contents, mode) {
-  var startMatch = contents.match(/(\n)?.*fsdk:start.*\n/i);
-  var endMatch = contents.match(/\n.*fsdk:end.*(\n)?/i);
+function parseContents (contents, mode) {
+  var startMatch = contents.match(startRE);
+  var endMatch = contents.match(endRE);
 
   if (startMatch === null) {
     return contents;
@@ -37,7 +44,11 @@ function parseModes (str) {
     return [];
   }
 
-  var modesStr = str.replace(/\n?.*\((.*)\).*\n?/, '$1');
+  var modesStr = str
+    .replace(startRE, '$1')
+    .replace('(', '')
+    .replace(')', '');
+
   return modesStr.split(',');
 }
 
@@ -55,6 +66,16 @@ function cutContent (contents, startMatch, endMatch) {
   return startContents + endContents;
 }
 
-vfs.src('./test_src/*.*')
-  .pipe(map(parseFile))
-  .pipe(vfs.dest('./dist_src'));
+function compile (options) {
+  var options = extend({}, options);
+
+  vfs.src(options.glob)
+    .pipe(parseFile(options))
+    .pipe(vfs.dest(options.dest));
+}
+
+compile({
+  glob: './test_src/*.*',
+  dest: './dist_src',
+  mode: 'admin'
+});
