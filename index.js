@@ -2,14 +2,15 @@ var vfs = require('vinyl-fs');
 var extend = require('util')._extend;
 var parser = require('./lib/parser')
 
-var fsdk = module.exports = {
+module.exports = {
   parse: parser.parse
+  compile: compile
 };
 
-fsdk.compile = function (options) {
+function compile (options) {
   var options = extend({}, options);
 
   return vfs.src(options.src)
     .pipe(fsdk.parse(options))
     .pipe(vfs.dest(options.dest));
-};
+}
