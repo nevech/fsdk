@@ -10,12 +10,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nevech/fornt-sdk.git"
+    "url": "git+https://github.com/nevech/fsdk.git"
   },
   "bugs": {
-    "url": "https://github.com/nevech/fornt-sdk/issues"
+    "url": "https://github.com/nevech/fsdk/issues"
   },
-  "homepage": "https://github.com/nevech/fornt-sdk#readme",
+  "homepage": "https://github.com/nevech/fsdk#readme",
   "dependencies": {
     "map-stream": "0.0.6",
     "through2": "^2.0.0",
