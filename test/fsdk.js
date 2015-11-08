@@ -4,6 +4,7 @@ var path = require('path');
 var rimraf = require('rimraf');
 
 var fsdk = require('../index.js');
+console.log(fsdk);
 var pathToUserModel = path.join(__dirname, './out/user-model.js');
 
 var wipeOut = function (done) {
@@ -25,7 +26,7 @@ describe('fsdk', function () {
 
   it('should compile file', function (done) {
     var stream = fsdk.compile({
-      src: path.join(__dirname, './examples/user-model.js'),
+      src: path.join(__dirname, '../examples/user-model.js'),
       dest: path.join(__dirname, './out/'),
       mode: 'user-part'
     });
