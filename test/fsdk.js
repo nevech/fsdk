@@ -25,7 +25,7 @@ describe('fsdk', function () {
 
   it('should compile file', function (done) {
     var stream = fsdk.compile({
-      src: path.join(__dirname, './user-model.js'),
+      src: path.join(__dirname, './examples/user-model.js'),
       dest: path.join(__dirname, './out/'),
       mode: 'user-part'
     });
