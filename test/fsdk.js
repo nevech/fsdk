@@ -4,7 +4,6 @@ var path = require('path');
 var rimraf = require('rimraf');
 
 var fsdk = require('../index.js');
-console.log(fsdk);
 var pathToUserModel = path.join(__dirname, './out/user-model.js');
 
 var wipeOut = function (done) {
