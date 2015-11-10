@@ -3,7 +3,7 @@ var extend = require('util')._extend;
 var parser = require('./lib/parser')
 
 module.exports = {
-  parse: parser.parse,
+  parseFile: parser.parseFile,
   compile: compile
 };
 
