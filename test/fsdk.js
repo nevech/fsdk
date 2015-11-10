@@ -16,7 +16,7 @@ describe('fsdk', function () {
   after(wipeOut);
 
   it('should be have #parse', function () {
-    should(fsdk).have.property('parse').which.is.a.Function();
+    should(fsdk).have.property('parseFile').which.is.a.Function();
   });
 
   it('should be have #compile', function () {

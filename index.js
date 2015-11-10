@@ -11,6 +11,6 @@ function compile (options) {
   var options = extend({}, options);
 
   return vfs.src(options.src)
-    .pipe(parser.parse(options))
+    .pipe(parser.parseFile(options))
     .pipe(vfs.dest(options.dest));
 }
