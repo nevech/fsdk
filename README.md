@@ -1,6 +1,6 @@
 # fsdk [![Build Status](https://travis-ci.org/nevech/fsdk.svg?branch=master)](https://travis-ci.org/nevech/fsdk)
 
-Managing your front-end sdk
+Managing your front-end sdk.
 
 ## Usage
 
@@ -13,6 +13,7 @@ fsdk.compile({
   mode: 'user-part'
 });
 ```
+
 or using with gulp:
 
 ```js
@@ -63,6 +64,33 @@ User.prototype.update = function() {
 
 };
 ```
+
+## API
+
+### fsdk.compile(options)
+
+#### options
+
+*Required*  
+Type: `object`
+
+##### options.src
+*Required*  
+Type: `string`
+
+##### options.dest
+*Required*  
+Type: `string`
+
+##### options.mode
+*Required*  
+Type: `string`
+
+### fsdk.parseFile(mode)
+
+##### mode
+*Required*  
+Type: `string`
 
 ## License
 [The MIT License](./LICENSE)
