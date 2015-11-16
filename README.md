@@ -13,6 +13,18 @@ fsdk.compile({
   mode: 'user-part'
 });
 ```
+or using with gulp:
+
+```js
+var gulp = require('gulp');
+var fsdk = require('fsdk');
+
+gulp.task('compileSDK', function () {
+  return gulp.src('sdk/*.*')
+    .pipe(fsdk.parseFile('user-part'))
+    .pipe(gulp.dest('dist/sdk'))
+});
+```
 
 Example source file:
 
