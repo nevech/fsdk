@@ -6,7 +6,10 @@
   "scripts": {
     "test": "node_modules/.bin/mocha"
   },
-  "author": "Ruslan Nevecherya <r.nevech@gmail.com>",
+  "author": {
+    "name": "Ruslan Nevecherya",
+    "email": "r.nevech@gmail.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
