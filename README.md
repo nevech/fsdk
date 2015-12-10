@@ -1,6 +1,11 @@
 # fsdk [![Build Status](https://travis-ci.org/nevech/fsdk.svg?branch=master)](https://travis-ci.org/nevech/fsdk) [![Coverage Status](https://coveralls.io/repos/nevech/fsdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/nevech/fsdk?branch=master)
 
-Managing your front-end sdk.
+Managing your front-end sdk. This module cuts source code by environment.
+
+## Install
+```
+npm install fsdk
+```
 
 ## Usage
 
@@ -8,7 +13,7 @@ Managing your front-end sdk.
 var fsdk = require('fsdk');
 
 fsdk.compile({
-  src: './sdk/*.*',
+  src: './sdk/**/*.*',
   dest: './dist/',
   env: 'user-part'
 });
@@ -65,6 +70,11 @@ User.prototype.update = function() {
 };
 ```
 
+#### Supported type of comments
+
+- JS: `// fsdk:start(env)`
+- CoffeeScript: `# fsdk:start(env)`
+
 ## API
 
 ### fsdk.compile(options)
@@ -85,17 +95,18 @@ Type: `string`
 The path (output folder) to write files to. [More info](https://github.com/gulpjs/vinyl-fs#destfolder-opt)
 
 
-
 ##### options.env
 Type: `string`
 
-Environment by should be saved source code
+Source code environment
 
 ### fsdk.parseFile(env)
+Returns a [stream](https://nodejs.org/api/stream.html)
 
-##### env
-*Required*
+#### env
 Type: `string`
+
+Source code environment
 
 ## License
 [The MIT License](./LICENSE)
