@@ -4,7 +4,8 @@
   "description": "Managing your front sdk",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node_modules/.bin/mocha",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": {
     "name": "Ruslan Nevecherya",
@@ -26,7 +27,9 @@
     "vinyl-fs": "^2.2.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.4",
     "mocha": "^2.3.3",
+    "nyc": "^5.0.0",
     "rimraf": "^2.4.3",
     "should": "^7.1.1"
   }
