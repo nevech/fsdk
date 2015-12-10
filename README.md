@@ -1,4 +1,4 @@
-# fsdk [![Build Status](https://travis-ci.org/nevech/fsdk.svg?branch=master)](https://travis-ci.org/nevech/fsdk) [![Coverage Status](https://coveralls.io/repos/nevech/fsdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/nevech/cut-substring?branch=master)
+# fsdk [![Build Status](https://travis-ci.org/nevech/fsdk.svg?branch=master)](https://travis-ci.org/nevech/fsdk) [![Coverage Status](https://coveralls.io/repos/nevech/fsdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/nevech/fsdk?branch=master)
 
 Managing your front-end sdk.
 
