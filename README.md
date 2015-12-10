@@ -10,7 +10,7 @@ var fsdk = require('fsdk');
 fsdk.compile({
   src: './sdk/*.*',
   dest: './dist/',
-  mode: 'user-part'
+  env: 'user-part'
 });
 ```
 
@@ -70,26 +70,31 @@ User.prototype.update = function() {
 ### fsdk.compile(options)
 
 #### options
-
-*Required*  
 Type: `object`
 
+All options is *required*
+
 ##### options.src
-*Required*  
-Type: `string`
+Type: `string` or `array`
+
+Glob or array of globs to read ([node-glob syntax](https://github.com/isaacs/node-glob)). [More info](https://github.com/gulpjs/vinyl-fs#srcglobs-opt)
 
 ##### options.dest
-*Required*  
 Type: `string`
 
-##### options.mode
-*Required*  
+The path (output folder) to write files to. [More info](https://github.com/gulpjs/vinyl-fs#destfolder-opt)
+
+
+
+##### options.env
 Type: `string`
 
-### fsdk.parseFile(mode)
+Environment by should be saved source code
 
-##### mode
-*Required*  
+### fsdk.parseFile(env)
+
+##### env
+*Required*
 Type: `string`
 
 ## License
