@@ -72,7 +72,7 @@ User.prototype.update = function() {
 };
 ```
 
-#### Supported type of comments
+#### Supported comments
 
 - JS: `// fsdk:start(env)`
 - CoffeeScript: `# fsdk:start(env)`
