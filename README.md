@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/fsdk.svg)](https://www.npmjs.com/package/fsdk) [![Build Status](https://travis-ci.org/nevech/fsdk.svg?branch=master)](https://travis-ci.org/nevech/fsdk) [![Coverage Status](https://coveralls.io/repos/nevech/fsdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/nevech/fsdk?branch=master)
 
-Managing your front-end sdk. This module cuts source code by environment.
+Managing your front-end sdk. Cuts source code by environment.
 
 ## Install
 ```
