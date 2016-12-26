@@ -34,7 +34,7 @@ gulp.task('compileSDK', function () {
 });
 ```
 
-Example source file:
+Example source file (not good example):
 
 ```js
 function User () {
